@@ -4,7 +4,7 @@ Command line to generate a SQL Server CLR deployment script (including serialize
 1. Reading one or multiple .NET Assemblies contains SQL Server CLR methods.
 3. Generating a SQL Script to deploy all CLR methods in your SQL Server Database.
 
-Download the last version here: [SqlClrDeployment.exe](https://github.com/Apps72/Dev.SqlClr/raw/master/releases/last/SqlClrDeployment.exe)
+Download the last version here: [SqlClrDeployment.exe](https://github.com/Apps72/Dev.Dev.SqlClrDeployement/raw/master/releases/last/SqlClrDeployment.exe)
 
 ### Usage
 
