@@ -108,6 +108,9 @@ namespace Apps72.Dev.SqlClr
                 Logger.WriteError(ex.Message);
                 if (ex.InnerException != null)
                     Logger.WriteError(ex.InnerException.Message);
+
+                Console.ResetColor();
+                Environment.Exit(1359);     // INTERNAL ERROR
             }
 #endif
 
