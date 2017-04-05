@@ -46,3 +46,5 @@ SqlClrDeployement MyAssembly1.dll MyAssembly2.dll -output=Script.sql
 ```
 SqlClrDeployement MyAssembly.dll -cs="Server=.;Database=MyDb;Trusted_Connection=True;" -pre=..\*.sql
 ```
+
+![Command Prompt Sample](SqlClrDeployment.png)
