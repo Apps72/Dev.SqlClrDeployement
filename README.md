@@ -1,4 +1,4 @@
-# SqlClrDeployment.exe
+# SqlClrDeployment.exe - v1.3
 Command line to generate a SQL Server CLR deployment script (including serialized assemblies):
 
 1. Reading one or multiple .NET Assemblies contains SQL Server CLR methods.
@@ -48,3 +48,11 @@ SqlClrDeployement MyAssembly.dll -cs="Server=.;Database=MyDb;Trusted_Connection=
 ```
 
 ![Command Prompt Sample](SqlClrDeployment.png)
+
+### Release notes
+
+#### Version 1.3
+Correction of Script generation, when a C# method is included in a namespace.
+
+#### Version 1.2
+First stable version, including generation of SqlFunction, SqlProcedure, SqlTrigger, SqlAgregate.

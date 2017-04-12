@@ -23,6 +23,7 @@ namespace Apps72.Dev.SqlClr
             this.SourceWithParams = methodWithParams;
             this.SourceWithReturns = methodWithReturns;
             this.Name = methodWithParams.Name;
+            this.Namespace = methodWithParams.DeclaringType.Namespace;
             this.ClassName = methodWithParams.DeclaringType.Name;
 
             // Type
@@ -58,6 +59,8 @@ namespace Apps72.Dev.SqlClr
         }
 
         public string Name { get; private set; }
+
+        public string Namespace { get; set; }
 
         public string ClassName { get; private set; }
 
@@ -148,11 +151,14 @@ namespace Apps72.Dev.SqlClr
                     }
                 }
 
-                // AS EXTERNAL NAME [AssemblyName].[ClassName].[MethodName]
+                // Namespace.
+                string namspace = String.IsNullOrEmpty(this.Namespace) ? String.Empty : $"{this.Namespace}.";
+
+                // AS EXTERNAL NAME [AssemblyName].[Namespace.ClassName].[MethodName]
                 if (this.Type == SqlMethodType.SqlAgregate)
-                    sql.Append($" EXTERNAL NAME [{_sqlAssembly.Name}].[{this.Name}]; ");
+                    sql.Append($" EXTERNAL NAME [{_sqlAssembly.Name}].[{namspace}{this.Name}]; ");
                 else
-                    sql.Append($" AS EXTERNAL NAME [{_sqlAssembly.Name}].[{this.ClassName}].[{this.Name}]; ");
+                    sql.Append($" AS EXTERNAL NAME [{_sqlAssembly.Name}].[{namspace}{this.ClassName}].[{this.Name}]; ");
 
                 sql.Append($"'");
             }
